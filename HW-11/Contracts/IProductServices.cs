@@ -12,6 +12,7 @@ namespace HW_11.Contracts
     {
         public string Add(string name, CategorieEnum cat, int price);
         public string showAll();
+        public string Search(string search);
         public string Update(int id, int options, string New);
         public string delete(int id);
     }

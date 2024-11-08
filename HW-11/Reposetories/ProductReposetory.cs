@@ -56,5 +56,13 @@ namespace HW_11.Reposetories
             }
         }
 
+        public List<Product> Search(string search)
+        {
+            using (IDbConnection db = new SqlConnection(conectionString))
+            {
+                List<Product> product = db.Query<Product>(UserQuery.search, new { Search = search }).ToList();
+                return product;
+            }
+        }
     }
 }

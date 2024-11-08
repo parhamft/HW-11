@@ -29,6 +29,21 @@ namespace HW_11.services
 
             return str;
         }
+        public string Search(string search)
+        {
+            string str = "";
+            var prod = repo.Search(search);
+            if (prod == null)
+            {
+                return "nothing found";
+            }
+            foreach (Product p in prod)
+            {
+                str += $"{p.Id}) {p.Name}   {p.CategoryId} | {p.Price}\n";
+            }
+            return str;
+
+        }
         public string Update(int id, int options, string New)
         {
             Product prod = null;
@@ -49,7 +64,7 @@ namespace HW_11.services
                     repo.Update(prod.Id, prod.Name, prod.CategoryId, prod.Price);
                     break;
                 case 3:
-                    
+
                     Console.WriteLine(prod.changePrice(Convert.ToInt32(New)));
                     repo.Update(prod.Id, prod.Name, prod.CategoryId, prod.Price);
                     break;

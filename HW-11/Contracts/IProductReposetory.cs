@@ -15,7 +15,7 @@ namespace HW_11.Contracts
     {
         public void AddProduct(Product P);
         public List<Product> GetAllProducts();
-
+        public List<Product> Search(string search);
         public void Update(int id, string name, CategorieEnum categoryId, int price);
         public void Delete(int id);
         public Product GetById(int id);

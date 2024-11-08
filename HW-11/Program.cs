@@ -15,8 +15,9 @@ while (stop==false)
     Console.Clear();
     Console.WriteLine("1)Add a product");
     Console.WriteLine("2)Show products");
-    Console.WriteLine("3)Update product");
-    Console.WriteLine("4)Delete a product");
+    Console.WriteLine("3)search for products");
+    Console.WriteLine("4)Update product");
+    Console.WriteLine("5)Delete a product");
     int options =Convert.ToInt32(Console.ReadLine());
     switch(options)
     {
@@ -39,6 +40,13 @@ while (stop==false)
             break;
         case 3:
             Console.Clear();
+            Console.Write("enter what you want to search for : ");
+            string str =Console.ReadLine();
+            Console.WriteLine(services.Search(str));
+            Console.ReadKey();
+            break;
+        case 4:
+            Console.Clear();
             bool x =false;
             Console.WriteLine(services.showAll());
             Console.WriteLine("please enter the id of the product : ");
@@ -60,7 +68,7 @@ while (stop==false)
             }
             Console.ReadKey();
             break;
-        case 4:
+        case 5:
             Console.Clear();
             Console.WriteLine(services.showAll());
             Console.WriteLine("please enter the id of the product : ");
